@@ -1,0 +1,188 @@
+/* ====================================   Header's style   ==================================== */
+
+#site-header {
+    @include clearfix();
+    margin-bottom: 30px;
+    z-index: 10;
+    position: relative;
+    display: none;
+    @include breakpoint(md) {
+        display: block;
+    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.site-header {
+    &__topbar {
+        @include clearfix();
+        background-color: #1F1F1F;
+        font-size: 12px;
+        line-height: 40px;
+        z-index: 5;
+        color: white;
+        a {
+            color: white;
+        }
+    }
+    &__contact {
+        float: left;
+        li {
+            display: inline-block;
+            .fa {
+                margin-right: 5px;
+            }
+            &+li {
+                margin-left: 35px;
+            }
+        }
+    }
+    &__tool {
+        float: right;
+        li {
+            float: left;
+            padding: 0 12px;
+            &+li {
+                border-left: 1px solid rgba(255, 255, 255, .2);
+            }
+            .fa {
+                font-size: 16px;
+                vertical-align: middle;
+            }
+            &:hover {
+                .fa-facebook,
+                .fa-google-plus,
+                .fa-youtube-play {
+                    color: $brand-info;
+                }
+            }
+        }
+    }
+    &__search {
+        float: right;
+        position: relative;
+        width: 200px;
+        .form-control {
+            height: 25px;
+            margin-top: 5px;
+            font-size: 12px;
+        }
+        .fa-search {
+            cursor: pointer;
+            position: absolute;
+            right: 4px;
+            top: 9px;
+            font-size: 16px;
+            @include transition(all, 0.2, ease);
+            @include haf {
+                color: $brand-primary;
+            }
+        }
+    }
+    &__content {
+        // text-align: center;
+        height: 133px;
+        background: rgba(0, 0, 0, 0.6); // padding: 20px 0;
+        .logo {
+            width: 133px;
+            height: 133px;
+            float: left;
+            position: relative;
+            background: #1f1f1f;
+            img {
+                width: 120px;
+                height: auto;
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    &__nav {
+        float: right;
+    }
+}
+
+.navigator {
+    @include clearfix();
+    font-size: 15px;
+    line-height: 35px;
+    font-family: $font-family-special;
+    margin-left: -11px;
+    margin-right: -11px;
+    >li {
+        float: left;
+        position: relative;
+        margin-right: 1px;
+        >a {
+            line-height: 133px;
+            text-transform: uppercase;
+            .site-footer__nav & {
+                line-height: 70px;
+            }
+        }
+        a {
+            display: block;
+            padding: 0 22px;
+            transition: background 0.2s linear, color 0.2s linear;
+            color: white;
+            &:hover {
+                background-color: $brand-info;
+                color: white;
+            }
+        }
+        &:hover {
+            .navigator__child {
+                left: auto;
+            }
+            .navigator__search {
+                right: 0;
+            }
+        }
+        &.is-active {
+            a {
+                background-color: $brand-info;
+                color: white;
+            }
+        }
+        &.is-featured {
+            >a {
+                line-height: 29px;
+                margin-top: 3px;
+                margin-bottom: 3px;
+                border-radius: 2px;
+                background: #eee;
+                color: $brand-primary;
+                &:hover {
+                    line-height: 35px;
+                    border-radius: 0;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    &__child {
+        position: absolute;
+        top: 100%;
+        left: -999em;
+        width: 200px;
+        z-index: 2;
+        @include has-shadow();
+        >li {
+            a {
+                background-color: $brand-info;
+                color: white;
+                &:hover {
+                    background: #1A5623;
+                }
+            }
+        }
+    }
+}
+
+// video page Header

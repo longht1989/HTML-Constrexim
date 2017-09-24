@@ -1,0 +1,157 @@
+/* button border  */
+
+.btn {
+    font-size: 14px; // -webkit-border-radius: 0px;
+    // -moz-border-radius: 0px;
+    // -ms-border-radius: 0px;
+    // -o-border-radius: 0px;
+    // border-radius: 0px;
+    @include transition(background-color, 0.2, ease-out);
+    .fa {
+        margin-right: 5px;
+    }
+    &:active:focus,
+    &:focus:active {
+        outline: none;
+    }
+    @include haf {
+        outline: none;
+    }
+}
+
+.btn-border {
+    border: 1px solid #ccc;
+    background-color: transparent;
+    color: #333;
+    @include transition(all, 0.2, ease-out);
+    @include haf() {
+        background-color: #111;
+        color: white;
+        border-color: #111;
+    }
+}
+
+.btn-round {
+    border-radius: 100px;
+}
+
+.form-control {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    &:focus {
+        border-color: darken($brand-primary, 15%);
+    }
+}
+
+.text-info {
+    color: $brand-info;
+    &:hover,
+    &:focus {
+        color: darken($brand-info, 10%);
+    }
+}
+
+// social listing
+.social-listing {
+    font-size: 0;
+    .fa {
+        font-size: 14px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        border-radius: 2px;
+        margin: 0 4px;
+        color: white;
+        @include transition(background, 0.2, linear);
+    }
+    .fa-facebook {
+        background: #3B5998;
+        &:hover {
+            background: darken(#3B5998, 10%);
+        }
+    }
+    .fa-twitter {
+        background: #0084B4;
+        &:hover {
+            background: darken(#0084B4, 10%);
+        }
+    }
+    .fa-google-plus {
+        background: #D34836;
+        &:hover {
+            background: darken(#D34836, 10%);
+        }
+    }
+    .fa-envelope {
+        background: #999999;
+        &:hover {
+            background: darken(#999999, 10%);
+        }
+    }
+}
+
+// style for checkbox & radiobox
+.check-box {
+    // position: relative;
+    input[type=checkbox],
+    input[type=radio] {
+        display: none;
+        &:checked+label::before {
+            content: "";
+            font-family: "fontawesome";
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+            font-size: 20px;
+            line-height: 10px;
+            color: #666;
+            text-align: center;
+            -webkikt-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.16);
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.16);
+        }
+    }
+    label {
+        margin-bottom: 0;
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        padding-left: 25px;
+        margin-right: 15px;
+        font-size: 13px;
+        font-weight: normal;
+        &::before {
+            content: "";
+            border-radius: 3px;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+            position: absolute;
+            left: 0;
+            bottom: 1px;
+            border: 1px solid #ddd;
+            background: linear-gradient(rgba(255, 255, 255, 1) 0%, rgba(239, 241, 244, 1) 100%);
+            -webkikt-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.06);
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.06);
+        }
+    }
+}
+
+.radio-box {
+    @extend .check-box;
+    input[type=radio] {
+        &:checked+label::before {
+            content: '';
+            font-size: 7px;
+            text-align: center;
+            line-height: 14px;
+        }
+    }
+    label {
+        &::before {
+            border-radius: 50%;
+        }
+    }
+}

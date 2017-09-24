@@ -1,0 +1,136 @@
+#site-content {
+    @include clearfix;
+    margin-bottom: 30px;
+}
+
+.site-wrap {
+    width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+    @include clearfix();
+}
+
+.main-col {
+    width: 854px;
+    float: left;
+}
+
+.sidebar-col {
+    width: 310px;
+    float: right;
+}
+
+// zone highlight
+.zone--highlight {
+    .story--highlight {
+        float: left;
+        width: 582px;
+        margin-right: 8px;
+    }
+    .zone__listing {
+        float: left;
+        width: 596px;
+        margin-right: -8px;
+        .story {
+            width: 282px;
+            float: left;
+            margin-left: 8px;
+            margin-right: 8px;
+            &:nth-child(2) {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+//zone featured 
+.zone--featured {
+    .story--highlight {
+        width: 620px;
+        float: left;
+    }
+    .zone__listing {
+        float: right;
+        width: 186px;
+        max-height: 353px;
+        overflow: auto;
+        &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            background-color: #111;
+        }
+        &::-webkit-scrollbar {
+            width: 6px;
+            background-color: #111;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: rgba(255, 255, 255, 0.3);
+            width: 4px;
+        }
+    }
+}
+
+// zone group 
+.zone {
+    &-wrap {
+        @include clearfix;
+    }
+    &--aside {
+        width: 202px;
+        float: right;
+    }
+    &--group {
+        width: 652px;
+        float: left;
+        @include clearfix;
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+    &--column {
+        width: 50%;
+        float: left;
+        padding: 0 8px;
+    }
+    &--cate-highlight {
+        .story--highlight {
+            width: 555px;
+            float: left;
+        }
+        .zone__listing {
+            width: 283px;
+            float: right;
+        }
+    }
+    &--cate-listing {
+        width: 636px;
+        float: left;
+    }
+}
+
+&.two-cols {
+    @include clearfix;
+    font-size: 0;
+    margin-left: -8px;
+    margin-right: -8px;
+    >* {
+        width: 50%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 8px;
+    }
+}
+
+&.four-cols {
+    @include clearfix;
+    font-size: 0;
+    margin-left: -8px;
+    margin-right: -8px;
+    >* {
+        width: 25%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 8px;
+    }
+}

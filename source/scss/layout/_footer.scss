@@ -1,0 +1,79 @@
+/* ====================================
+   Footer's style
+   ==================================== */
+
+#site-footer {
+    margin-top: 32px;
+    @include clearfix;
+}
+
+.site-footer {
+    &__nav {
+        background: black;
+    }
+    &__menu {
+        background: #F0F0F0;
+        padding: 12px 0px;
+        font-size: 0;
+        a {
+            color: #333;
+            width: 25%;
+            display: inline-block;
+            font-size: 16px;
+            line-height: 1.4em;
+            padding: 12px 0;
+            font-family: $font-family-special;
+            text-transform: uppercase;
+            vertical-align: top;
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+    }
+    &__info {
+        padding: 30px 0;
+        background: #000 url(../img/footer-bg.png) left top no-repeat;
+        background-size: cover;
+        h3,
+        p {
+            margin-bottom: 15px;
+            color: white;
+        }
+    }
+    &__social {
+        >li {
+            display: inline-block;
+            &+li {
+                margin-left: 10px;
+            }
+        }
+        .fa {
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            font-size: 16px;
+            color: white;
+            border-radius: 50%;
+            transition: all 0.2s linear;
+            text-align: center;
+            &.fa-facebook {
+                background-color: #43619C;
+                &:hover {
+                    background: darken(#43619C, 10%);
+                }
+            }
+            &.fa-google-plus {
+                background-color: #F24033;
+                &:hover {
+                    background: darken(#F24033, 10%);
+                }
+            }
+            &.fa-twitter {
+                background-color: #24A9E6;
+                &:hover {
+                    background: darken(#24A9E6, 10%);
+                }
+            }
+        }
+    }
+}
