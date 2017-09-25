@@ -3,12 +3,18 @@
    ==================================== */
 
 $(function() {
-    $('.search-wrap .fa-search').click(function(){
-     $(this).parent( ".search-wrap").toggleClass("is-active");
+    $('.search-wrap .fa-search').click(function() {
+        $(this).parent(".search-wrap").toggleClass("is-active");
     });
-    $('#featured-slider ul').bxSlider({
+    var featuredslider = $('#featured-slider ul');
+    featuredslider.bxSlider({
         prevText: '',
-        nextText: ''
+        nextText: '',
+        auto: 1,
+        // autoControls: true,
+        onSlideAfter: function() {
+            featuredslider.startAuto()
+        }
     });
     $('#project ul').bxSlider({
         prevText: '',

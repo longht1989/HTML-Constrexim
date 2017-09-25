@@ -360,15 +360,15 @@
             margin-right: 16px;
         }
     }
-    .maps{
-        img{
-            border-radius: 5px;
-        }
+    .maps {
+        border-radius: 5px;
+        height: 180px;
+        overflow: hidden;
     }
-    &--border{
-        >li{
+    &--border {
+        >li {
             font-size: 18px;
-            &+li{
+            &+li {
                 padding-top: 15px;
                 border-top: 1px solid #ddd;
             }
