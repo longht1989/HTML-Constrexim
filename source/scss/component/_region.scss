@@ -159,6 +159,11 @@
             }
         }
     }
+    &--special {
+        .zone__content {
+            padding-bottom: 60px;
+        }
+    }
     &--featured {
         background: #111;
         padding: 16px;
@@ -218,6 +223,7 @@
 
 .featured {
     &-slider-wrap {
+        margin-top: -133px;
         .bx {
             &-wrapper {
                 position: relative;
